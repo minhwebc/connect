@@ -1,0 +1,27 @@
+#logo{
+	display: inline-block;
+	width: 220px;
+}
+#logo h2{
+	display: inline-block;
+	font-weight: bolder;
+	color: #99CCCC;
+}
+#nav{
+	color: #CCCCCC;
+	width: 70%;
+}
+#nav a{
+	color: white;
+	font-size: 20px;
+}
+li{
+	margin-right: 40px;
+}
+#nav a:hover {
+  color: #FF9966 ;
+  background-color: transparent ;
+}
+
+
+

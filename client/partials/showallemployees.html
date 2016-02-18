@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<admin-navbar></admin-navbar>
+
+<style>
+	h2{
+		padding-bottom: 10px;
+	}
+	table {
+		padding-bottom: 10px;
+	}
+
+</style>
+
+<h2> All Employees </h2>
+
+<div id ="search" class="input-group margin-bottom-sm ">
+ <span style = 
+ 	"padding: 10.5px;
+ 	 border: 1px solid lightgray;
+ 	 display: inline-block;
+ 	 float:left;
+ 	 background-color: #FAFAFA">
+ 	 <i class="fa fa-search fa-fw"></i></span>
+  <input type="text" class="form-control" placeholder="Search" ng-model="searchText" style ="margin-bottom: 20px; vertical-align: top; float: left; width: 200px ">
+</div>
+
+<div>
+	<table class="table table-hover table-striped table-bordered">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Email</th>
+	      <th>Phone number</th>
+	      <th>Action</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+
+ <tr ng-repeat='employee in allEmplCtrl.allEmployees | filter: searchText' >
+	     <td ng-bind='employee.name'></td>
+	      <td ng-bind='employee.email'></td>
+	      <td ng-bind='employee.phone_number'></td>
+	      <td><a href='#/editemployeeinfo/{{employee.id}}'>Edit Profile</a> / <a href='#/availability/{{employee.id}}'>Update Availability</a></td>
+	    </tr>
+	</tbody>
+</table>
+</div>

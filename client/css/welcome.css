@@ -1,0 +1,42 @@
+body {
+    background-repeat: no-repeat;
+    opacity: 0.94;
+    background-image: url('./../images/laptop.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+/*.button {
+    display: inline-block;
+    padding: 1em;
+    background-color: #79BD9A;
+    text-decoration: none;
+    color: white;
+}*/
+.jumbotron{
+	margin-top: 60px;
+	text-align: center;
+	background-color:transparent !important;
+	color: white;
+	position: center;
+	height: 50%;
+
+}
+p{
+	display: inline-block;
+}
+
+#student{
+	margin-right: 150px;
+}
+#tutor{
+	margin-left: 150px;
+}
+
+#about{
+	color: black;
+	text-align: left;
+	width: 100%;
+}

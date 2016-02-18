@@ -1,0 +1,13 @@
+.checkboxdays label, .checkboxlocations label{
+	font-size: 12pt;
+	padding-right: 0px;
+	padding-left: 15px;
+}
+
+.availableHeader {
+	display: block;
+}
+
+.checkboxlocations {
+	padding-left: 0px;
+}

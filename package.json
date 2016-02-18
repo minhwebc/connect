@@ -1,0 +1,13 @@
+{
+  "name": "side-app",
+  "description": "this is a developing app",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "express-session": "^1.12.1",
+    "express-validator": "^2.18.0",
+    "moment": "^2.10.6",
+    "mysql": "^2.9.0",
+    "socket.io": "latest"
+  }
+}

@@ -1,4 +1,4 @@
-app.controller('studentController', function(sessionFactory, $location){
+app.controller('tutorController', function(sessionFactory, $location){
  	var _this = this;
  	sessionFactory.getUser(function(currentUser){
 		if(currentUser) {

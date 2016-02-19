@@ -25,11 +25,11 @@ app.controller('loginController', function(sessionFactory, userFactory, $locatio
 				// _this.sessionErrors = sessionUser.errors;
 				console.log('error');
 			} else {	
-				console.log(sessionUser);			
-				// sessionFactory.getUser(function(sUser){
-				// 	_this.currentUser = sUser;
-				// }); 
-				// _this.user = {};
+				if(sessionUser.user_type == 1){
+					$location.path('/student');
+				}else{ 
+					$location.path('/tutor');
+				}
 			}
 		});
 	}

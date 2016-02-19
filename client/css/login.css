@@ -1,19 +1,9 @@
-body {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-repeat: no-repeat;
-    background-image: url('./../images/loginv2.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
-
 .form-signin {
     background-color: white;
     border-radius: 10px;
     max-width: 330px;
     padding: 30px;
-    margin: 0 auto;
+    margin: 5em auto;
     opacity: 0.9;
 }
 

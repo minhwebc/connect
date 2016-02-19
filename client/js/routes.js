@@ -10,13 +10,15 @@ app.config(function ($routeProvider) {
     })
     .when('/login/student', {
         templateUrl: 'partials/studentLogin.html',
-        controller: 'studentController',
-        controllerAs: 'studentCtrl'
+        controller: 'loginController',
+        controllerAs: 'lgnCtrl',
+        css: 'css/login.css'
     })
     .when('/login/tutor', {
         templateUrl: 'partials/tutorLogin.html',
-        controller: 'tutorController',
-        controllerAs: 'tutorCtrl'
+        controller: 'loginController',
+        controllerAs: 'lgnCtrl',
+        css: 'css/login.css'
     })
     .when('/forum', {
         templateUrl: 'partials/forum.html'
@@ -24,7 +26,8 @@ app.config(function ($routeProvider) {
     .when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
         controller: 'scheduleController',
-        controllerAs: 'schCtrl'
+        controllerAs: 'schCtrl',
+        css: 'css/dashboard.css'
     })
     .when('/addemployee',{
         templateUrl: 'partials/addemployee.html',

@@ -16,7 +16,10 @@ app.config(function ($routeProvider) {
     .when('/login/tutor', {
         templateUrl: 'partials/tutorLogin.html',
         controller: 'tutorController',
-        controllerAs: 'tuCtrl'
+        controllerAs: 'tutorCtrl'
+    })
+    .when('/forum', {
+        templateUrl: 'partials/forum.html'
     })
     .when('/register/student', {
         templateUrl: 'partials/studentRegistration.html',

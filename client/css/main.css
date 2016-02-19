@@ -1,27 +1,34 @@
-#logo{
+#logo {
 	display: inline-block;
-	width: 220px;
 }
-#logo h2{
-	display: inline-block;
-	font-weight: bolder;
-	color: #99CCCC;
+
+	#logo h2{
+		display: inline-block;
+		font-weight: bolder;
+		color: #99CCCC;
+		margin-top: 0px;
+	    margin-bottom: 0px;
+	    padding-top: 12px;
+	}
+
+.navbar {
+	padding-left: 2em;
 }
-#nav{
+
+#nav {
 	color: #CCCCCC;
-	width: 70%;
 }
-#nav a{
-	color: white;
-	font-size: 20px;
-}
-li{
+
+	#nav a{
+		color: white;
+		font-size: 20px;
+	}
+
+	#nav a:hover {
+	  color: #FF9966 ;
+	  background-color: transparent ;
+	}
+
+li {
 	margin-right: 40px;
 }
-#nav a:hover {
-  color: #FF9966 ;
-  background-color: transparent ;
-}
-
-
-

@@ -14,6 +14,14 @@ module.exports = function(app) {
 
 	app.get('/checkSession', users.getUser);
 
+	app.post('/addQuestion', users.addQuestion);
+
+	app.get('/getQuestions', users.getQuestions);
+
+
+	// app.get('/contact', shifts.contact);
+	// app.get('/allEmployees', employees.allEmployees);
+
 	app.post('/createEvent', events.createEvent);
 
 	app.get('/getEvents', events.getEvents);

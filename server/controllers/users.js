@@ -29,6 +29,37 @@ module.exports = (function() {
 
 		getUser: function(req, res){
 			res.json(req.session.user);
+		},
+
+		getQuestions: function(req,res){
+			var query = "SELECT * FROM posts ";
+			query += "join comments on comments.post_id = posts.id ";
+			query += "join users on users.id = comments.user_id ";
+			query += "where users.id = " + req.session.user.id;
+
+			connection.query(query, function (err, rows){
+				if (err) {
+					res.json(err);
+				} else {
+					res.json(rows);
+				}
+			})
+		},
+
+		addQuestion: function(req, res){
+			var values = {
+				content: req.body.message,
+				author_id: req.session.user.id
+			}
+
+			var query = "insert into posts set ?";
+			connection.query(query, values, function(err, result) {
+				if(err){
+					res.json(err);
+				} else {
+					res.json(result);
+				}
+			});
 		}
 	}
 })();

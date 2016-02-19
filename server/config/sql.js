@@ -5,6 +5,6 @@ connection = db.createConnection({
 	port : 3306,
 	user: "root",
 	password: "root",
-	database: "connect",
+	database: "connectdb",
 	multipleStatements: true
 });

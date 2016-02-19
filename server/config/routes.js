@@ -13,6 +13,12 @@ module.exports = function(app) {
 	app.post('/authenticateUser', users.login);
 
 	app.get('/checkSession', users.getUser);
+
+	app.post('/addQuestion', users.addQuestion);
+
+	app.get('/getQuestions', users.getQuestions);
+
+
 	// app.get('/contact', shifts.contact);
 	// app.get('/allEmployees', employees.allEmployees);
 

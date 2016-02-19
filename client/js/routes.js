@@ -11,12 +11,14 @@ app.config(function ($routeProvider) {
     .when('/login/student', {
         templateUrl: 'partials/studentLogin.html',
         controller: 'loginController',
-        controllerAs: 'lgnCtrl'
+        controllerAs: 'lgnCtrl',
+        css: 'css/login.css'
     })
     .when('/login/tutor', {
         templateUrl: 'partials/tutorLogin.html',
-        controller: 'tutorController',
-        controllerAs: 'tutorCtrl'
+        controller: 'loginController',
+        controllerAs: 'lgnCtrl',
+        css: 'css/login.css'
     })
     .when('/forum', {
         templateUrl: 'partials/forum.html'
@@ -31,29 +33,17 @@ app.config(function ($routeProvider) {
         controller: 'tuRegisController',
         controllerAs: 'tuReg'
     })
-    .when('/dashboard', {
-        templateUrl: 'partials/dashboard.html',
-        controller: 'scheduleController',
-        controllerAs: 'schCtrl'
+    .when('/student', {
+        templateUrl: 'partials/studentProfile.html',
+        controller: 'studentController',
+        controllerAs: 'stuCtrl'
     })
-    .when('/admin', {
-        templateUrl: 'partials/admin-login.html', 
-        controller:'adminLoginController',
-        controllerAs: 'adlogCtrl',
-        css: 'css/admin.css'
-    })
-    .when('/availability/:id', {
-        templateUrl: 'partials/availability.html', 
-        controller: 'addEmployeeController',
-        controllerAs: 'addCtrl',
-        css: 'css/addemployee.css'
-    })
-    .when('/addlocation', {
-        templateUrl: 'partials/addlocation.html', 
-        controller: 'addLocationController',
-        controllerAs: 'addLocationCtrl'
+    .when('/tutor', {
+        templateUrl: 'partials/tutorProfile.html',
+        controller: 'tutorController',
+        controllerAs: 'tuCtrl' 
     })
     .otherwise({
-        redirectTo: '/dashboard'
+        redirectTo: '/'
     });
 });

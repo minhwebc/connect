@@ -21,7 +21,8 @@ app.config(function ($routeProvider) {
         css: 'css/login.css'
     })
     .when('/forum', {
-        templateUrl: 'partials/forum.html'
+        templateUrl: 'partials/forum.html',
+        css: 'css/forum.css'
     })
     .when('/register/student', {
         templateUrl: 'partials/studentRegistration.html',

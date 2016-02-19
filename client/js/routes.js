@@ -44,6 +44,11 @@ app.config(function ($routeProvider) {
         controller: 'tutorController',
         controllerAs: 'tuCtrl' 
     })
+    .when('/createEvent', {
+        templateUrl: 'partials/createEvent.html',
+        controller: 'eventController',
+        controllerAs: 'eventCtrl' 
+    })
     .otherwise({
         redirectTo: '/'
     });

@@ -1,11 +1,11 @@
-//var employees = require('./../controllers/employees.js');
 var students = require('./../controllers/students.js');
 var tutors = require('./../controllers/tutors.js');
-var users = require('./../controllers/users.js')
-//var admins = require('./../controllers/admins.js');
-//var locations = require('./../controllers/locations.js');
+var users = require('./../controllers/users.js');
+var events = require('./../controllers/events.js');
 
 module.exports = function(app) {
+	app.post('/joinEvent', events.join);
+
 	app.post('/registudent', students.registerStudent);
 	
 	app.post('/registutor', tutors.registerTutor);
@@ -13,10 +13,10 @@ module.exports = function(app) {
 	app.post('/authenticateUser', users.login);
 
 	app.get('/checkSession', users.getUser);
-	// app.get('/contact', shifts.contact);
-	// app.get('/allEmployees', employees.allEmployees);
 
-	// app.get('/oneEmployee/:id', employees.getOneEmployee);
+	app.post('/createEvent', events.createEvent);
+
+	app.get('/getEvents', events.getEvents);
 
 	// app.delete('/deleteEmployee/:id', employees.deleteEmployee);
 

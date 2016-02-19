@@ -32,7 +32,6 @@ app.factory('sessionFactory', function($http){
 			} else { 
 				session.errors = 'You must be logged in to access that page!';
 			}
-
 			callback(response);
 		});
  	}

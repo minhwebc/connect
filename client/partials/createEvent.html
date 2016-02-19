@@ -1,66 +1,34 @@
-<h1>Student Registration</h1> 
+<h1>Add an event</h1> 
 <div class="col-md-4">
 	<form class="form-horizontal">
 		<div class="form-group">
-			<label class="col-md-3 control-label" for="email">Email</label>
+			<label class="col-md-3 control-label" for="name">Name</label>
 			<div class="col-md-9">
-				<input type="email" class="form-control" id="email" ng-model="stuReg.newStudent.email_address" placeholder="Email Address">
+				<input type="text" class="form-control" id="name" ng-model="eventCtrl.newEvent.name" placeholder="Location Name">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-md-3 control-label" for="password">Password</label>
+			<label class="col-md-3 control-label" for="description">Description</label>
 			<div class="col-md-9">
-				<input type="password" class="form-control" id="password" ng-model="stuReg.newStudent.password" placeholder="Password">
-			</div>
-			
-		</div>
-		<div class="form-group">
-			<label class="col-md-3 control-label" for="cpassword">Confirm Password</label>
-			<div class="col-md-9">
-				<input type="password" class="form-control" id="cpassword" ng-model="stuReg.newStudent.cpassword" placeholder="Confirm your Password">
+				<input type="text" class="form-control" id="name" ng-model="eventCtrl.newEvent.description" placeholder="Description">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-md-3 control-label" for="first_name">First Name</label>
+			<label class="col-md-3 control-label" for="address">Address</label>
 			<div class="col-md-9">
-				<input type="text" class="form-control" id="first_name" ng-model="stuReg.newStudent.first_name" placeholder="First Name">
+				<input type="text" class="form-control" id="address1" ng-model="eventCtrl.newEvent.address" placeholder="Address">
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-md-3 control-label" for="last_name">Last Name</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="last_name" ng-model="stuReg.newStudent.last_name" placeholder="Last Name">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-md-3 control-label" for="gender">Gender</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="gender" ng-model="stuReg.newStudent.gender" placeholder="Gender">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-md-3 control-label" for="address1">Address</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="address1" ng-model="stuReg.newStudent.address1" placeholder="Address Line 1">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-md-3 control-label" for="address2">Address 2</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="address2" ng-model="stuReg.newStudent.address2" placeholder="Address Line 2">
-			</div>
-		</div>
+		</div> 
 		<div class="form-group">
 			<label class="col-md-3 control-label" for="city">City</label>
 			<div class="col-md-9">
-				<input type="text" class="form-control" id="city" ng-model="stuReg.newStudent.city" placeholder="City">
+				<input type="text" class="form-control" id="city" ng-model="eventCtrl.newEvent.city" placeholder="City">
 			</div>
 		</div>
-
 		<div class="form-group">
 			<label class="col-md-3 control-label" for="state">State</label>
 			<div class="col-md-9">
-				<select class="form-control" name="state" ng-model="stuReg.newStudent.state">
+				<select class="form-control" name="state" ng-model="eventCtrl.newEvent.state">
 					<option value=''>Select a State</option>
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
@@ -119,9 +87,10 @@
 		<div class="form-group">
 			<label class="col-md-3 control-label" for="zip">Zip</label>
 			<div class="col-md-9">
-				<input type="text" class="form-control" id="zip" ng-model="stuReg.newStudent.zip" placeholder="Zip Code ">
+				<input type="text" class="form-control" id="zip" ng-model="eventCtrl.newEvent.zip" placeholder="Zip Code">
 			</div>
 		</div>
-		<button class="col-md-6 col-md-push-3 btn btn-primary" ng-click="stuReg.regStudent()">Register</button>
+
+		<button class="col-md-6 col-md-push-3 btn btn-primary" ng-click="eventCtrl.createEvent()">Create</button>
 	</form>
-</div>
+</div> 

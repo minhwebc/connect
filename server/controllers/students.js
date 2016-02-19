@@ -8,7 +8,7 @@ module.exports = (function() {
 		},
 
 		registerStudent: function(req, res) {
-			req.assert('email', 'Invalid email given').notEmpty().isEmail();
+			req.assert('email_address', 'Invalid email given').notEmpty().isEmail();
 			//req.assert('password', 'Password must be between 6 and 20 characters').len(6, 20);
 			req.assert('cpassword', 'Passwords do not match').equals(req.body.password);
 			req.assert('first_name', 'Valid first name is required').notEmpty().isAlpha();
@@ -25,7 +25,7 @@ module.exports = (function() {
 				var values = {
 					first_name: req.body.first_name,
 					last_name: req.body.last_name,
-					email_address: req.body.email, 
+					email_address: req.body.email_address, 
 					gender: req.body.gender,
 					password: req.body.password, 
 					address1: req.body.address1,

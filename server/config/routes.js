@@ -10,7 +10,9 @@ module.exports = function(app) {
 	
 	app.post('/registutor', tutors.registerTutor);
 
-	app.post('/authenticateUser', users.login)
+	app.post('/authenticateUser', users.login);
+
+	app.get('/checkSession', users.getUser);
 	// app.get('/contact', shifts.contact);
 	// app.get('/allEmployees', employees.allEmployees);
 

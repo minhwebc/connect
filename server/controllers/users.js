@@ -20,13 +20,15 @@ module.exports = (function() {
 							last_name: rows[0].last_name,
 							user_type: rows[0].user_type
 						}
-
-						req.session.user = user;
+						req.session.user = rows[0];
 						res.json(user)
-
 					}
 				}
 			})
+		},
+
+		getUser: function(req, res){
+			res.json(req.session.user);
 		}
 	}
 })();

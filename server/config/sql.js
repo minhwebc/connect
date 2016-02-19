@@ -5,7 +5,6 @@ connection = db.createConnection({
 	port : 3306,
 	user: "root",
 	password: "root",
-	database: "side-app",
+	database: "connect",
 	multipleStatements: true
-  
 });

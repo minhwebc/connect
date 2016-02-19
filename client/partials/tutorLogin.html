@@ -1,5 +1,5 @@
 <form class="form-signin">
-	<h2 class="form-signin-heading">Admin Sign In</h2>
+	<h2 class="form-signin-heading">Tutor Sign In</h2>
 	<label>Email address</label>
 	<label for="inputEmail" class="sr-only">Email address</label>
 	<div class="input-group">
@@ -17,15 +17,15 @@
 	  	<input type="password" id="inputPassword" class="form-control" 
 		placeholder="Password" ng-model="adlogCtrl.user.password" required>
 	</div>
-	<div id="invalid" ng-show="adlogCtrl.invalid"><br>Invalid email or password</div>
-
+<!-- 	<div id="invalid" ng-show="adlogCtrl.invalid"><br>Invalid email or password</div>
+ -->
 	<div class="checkbox">
 		<label>
 			<input type="checkbox" value="remember-me">
 			<i class="fa fa-pencil"></i> Remember me
 		</label>
 	</div>
-
+	<p>Don't have an account? <a href="#/register/tutor">Register here</a></p>
 	<button ng-click='adlogCtrl.login()' class="btn btn-lg btn-primary btn-block" 
 	type="submit">Sign in</button>
 </form>

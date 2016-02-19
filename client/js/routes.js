@@ -10,49 +10,28 @@ app.config(function ($routeProvider) {
     })
     .when('/login/student', {
         templateUrl: 'partials/studentLogin.html',
-        controller: 'studentController',
-        controllerAs: 'stuCtrl'
+        controller: 'loginController',
+        controllerAs: 'lgnCtrl'
     })
     .when('/login/tutor', {
         templateUrl: 'partials/tutorLogin.html',
         controller: 'tutorController',
         controllerAs: 'tuCtrl'
     })
+    .when('/register/student', {
+        templateUrl: 'partials/studentRegistration.html',
+        controller: 'stuRegisController',
+        controllerAs: 'stuReg'
+    })
+    .when('/register/tutor', {
+        templateUrl: 'partials/tutorRegistration.html',
+        controller: 'tuRegisController',
+        controllerAs: 'tuReg'
+    })
     .when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
         controller: 'scheduleController',
         controllerAs: 'schCtrl'
-    })
-    .when('/addemployee',{
-        templateUrl: 'partials/addemployee.html',
-        controller: 'addEmployeeController',
-        controllerAs: 'addCtrl',
-        css: 'css/addemployee.css'
-    })
-    .when('/myaccount', {
-        templateUrl: 'partials/myaccount.html',
-        controller: 'accountController',
-        controllerAs: 'accCtrl'
-    })
-    .when('/admin/dashboard', {
-        templateUrl: 'partials/admin-dashboard.html',
-        controller: 'adminDashController',
-        controllerAs: 'adDashCtrl'
-    })
-    .when('/addshift', {
-        templateUrl: 'partials/addshift.html',
-        controller: 'addShiftController',
-        controllerAs: 'addSftCtrl'
-    })
-    .when('/showallemployees', {
-        templateUrl: 'partials/showallemployees.html', 
-        controller:'allEmployeesController',
-        controllerAs: 'allEmplCtrl'
-    })
-    .when('/editemployeeinfo/:id', {
-        templateUrl: 'partials/editemployeeinfo.html', 
-        controller:'editEmployeeController',
-        controllerAs: 'editEmpCtrl'
     })
     .when('/admin', {
         templateUrl: 'partials/admin-login.html', 

@@ -1,11 +1,17 @@
 //var employees = require('./../controllers/employees.js');
-var shifts = require('./../controllers/shifts.js');
+var students = require('./../controllers/students.js');
+var tutors = require('./../controllers/tutors.js');
+var users = require('./../controllers/users.js')
 //var admins = require('./../controllers/admins.js');
 //var locations = require('./../controllers/locations.js');
 
 module.exports = function(app) {
+	app.post('/registudent', students.registerStudent);
+	
+	app.post('/registutor', tutors.registerTutor);
 
-	app.get('/contact', shifts.contact);
+	app.post('/authenticateUser', users.login)
+	// app.get('/contact', shifts.contact);
 	// app.get('/allEmployees', employees.allEmployees);
 
 	// app.get('/oneEmployee/:id', employees.getOneEmployee);
@@ -15,8 +21,6 @@ module.exports = function(app) {
 	// app.post('/editEmployee', employees.editEmployee);
 
 	// app.post('/addEmployee', employees.addEmployee);
-
-	// app.post('/updateAvailability', employees.updateAvailability);
 
 	// app.post('/addShift', shifts.addShift);
 

@@ -8,6 +8,8 @@ var app = express();
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+var validator = require('express-validator');
+app.use(validator());
 
 var session = require('express-session')
 app.use(session({

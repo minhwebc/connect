@@ -14,8 +14,4 @@ app.controller('accountController', function(sessionFactory, employeeFactory, $l
 			$location.path('/')
 		})
 	}
-
-	 
-
-
 })

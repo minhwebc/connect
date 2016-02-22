@@ -1,23 +1,4 @@
-<div class='leftside'>
-	<div class='nearby-events'>
-		<h4>Events near you</h4>
-		<ul>
-			<li>Event1</li>
-			<li>Event2</li>
-			<li>Event3</li>
-			<li>Event3</li>
-		</ul>
-
-	</div>
-	<div class='other-events'>
-		<h4>Other Events</h4>
-		<ul>
-			<li>Event1</li>
-			<li>Event2</li>
-			<li>Event3</li>
-			<li>Event3</li>
-		</ul>
-	</div>
+<!-- <div class='leftside'>
 </div>
 
 <div class='asked-questions'>
@@ -29,4 +10,83 @@
 		<li>Question 2</li>
 		<li>Question 3</li>
 	</ul>
+</div> -->
+<div class="header-bg"></div>
+<div class="inner container">
+	<div id="first">
+		<div id="right-container">
+			<i class="fa fa-connectdevelop fa-5x"></i>
+		</div>
+		<div id="search-box" class="search-box seach-header" role="search">
+			<div class="row">
+				<div class="col-lg-12">
+				    <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+				      </span>
+				    </div><!-- /input-group -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="info">
+		<ul id="left-info">
+			<li><i class="fa fa-home"></i>Something here</li>
+			<li>Something here</li>
+  		</ul>
+  		<ul id="right-info"class="social-links col-xs-4">
+            <li id="social-link-facebook">
+            	<a href="#" title="Facebook">
+         		<i class="fa fa-facebook-official"></i></a>
+    		</li>
+            <li id="social-link-twitter">
+        		<a href="#" title="Twitter">
+                <i class="fa fa-twitter"></i>
+                  </a>
+    		</li>
+            <li id="social-link-google-plus">
+        		<a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+    		</li>
+        </ul>
+    </div>
+    <div id="post-container">
+	    <div class="row">
+	      	<div id="post" class="col-xs-12 col-sm-6 col-md-9">
+				<div class="asked-questions" class="col-sm-9 rightside">
+					<textarea type='text' ng-model='forumCtrl.question.message' placeholder='Ask a question'></textarea>
+					<button ng-click="forumCtrl.askQuestion()" class='btn btn-xs btn-primary'>Post</button>
+				</div>
+			</div>
+  			<div id="user" class="col-xs-6 col-md-3">
+  				<h2>Hi User!</h2>
+			    <div class='nearby-events'>
+					<h4>Events near you</h4>
+					<ul>
+						<li>Event1</li>
+						<li>Event2</li>
+						<li>Event3</li>
+						<li>Event3</li>
+					</ul>
+				</div>
+				<div class='other-events'>
+					<h4>Other Events</h4>
+					<ul>
+						<li>Event1</li>
+						<li>Event2</li>
+						<li>Event3</li>
+						<li>Event3</li>
+					</ul>
+				</div>
+	  		</div>
+		</div>
+	</div>
+<!-- 	<button ng-click="forumCtrl.askQuestion()" class='btn btn-xs btn-primary'>Post</button>
+ -->	
+ <!-- <h4>Questions you have asked</h4>
+	<ul>
+		<li>Question 1</li>
+		<li>Question 2</li>
+		<li>Question 3</li>
+	</ul> -->
 </div>

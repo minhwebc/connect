@@ -18,7 +18,16 @@
 	    	<li><div id="logo"><i class="fa fa-connectdevelop fa-2x"></i> <h2>Connect</h2></div></li>
 	        <li><a href="#/" class="button hvr-underline-from-center">Home</a></li>
 	        <li><a href="#/forum" class="button hvr-underline-from-center">Forum</a></li>
-	        <li><a href="#/login/tutor" class="button hvr-underline-from-center">Messages</a></li>
+	        <li class="dropdown" style="margin-left: 550px;">
+          		<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick links<span class="caret"></span></a>
+	          	<ul class="dropdown-menu">
+		            <li><a href="#" class="button hvr-underline-from-left" style="color : black;">Profile</a></li>
+		            <li><a href="#" class="button hvr-underline-from-left" style="color : black;">Messages</a></li>
+		            <li><a href="#" class="button hvr-underline-from-left" style="color : black;">Something else here</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#" class="button hvr-underline-from-left" style="color : black;">Log Out</a></li>
+	          	</ul>
+        	</li>
 	    </ul>
 	</div>
 	<div class="container" ng-view=""></div>

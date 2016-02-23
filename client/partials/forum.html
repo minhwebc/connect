@@ -32,8 +32,9 @@
 	</div>
 	<div id="info">
 		<ul id="left-info">
-			<li><i class="fa fa-home"></i>Something here</li>
-			<li>Something here</li>
+			<li><i class="fa fa-home"></i>My preference</li>
+			<li>Display all posts</li>
+			<li></li>
   		</ul>
   		<ul id="right-info"class="social-links col-xs-4">
             <li id="social-link-facebook">
@@ -54,12 +55,34 @@
 	    <div class="row">
 	      	<div id="post" class="col-xs-12 col-sm-6 col-md-9">
 				<div class="asked-questions" class="col-sm-9 rightside">
-					<textarea type='text' ng-model='forumCtrl.question.message' placeholder='Ask a question'></textarea>
-					<button ng-click="forumCtrl.askQuestion()" class='btn btn-xs btn-primary'>Post</button>
+					<textarea type='text' placeholder='Ask a question...'style="width: 100%; height: 150px;" ng-model='forumCtrl.newPost.content'></textarea>
+					Category: 
+					<select ng-model='forumCtrl.newPost.category' ng-options="category.name for category in forumCtrl.categories track by category.id"><option value=''>Select Category</option>
+					</select>
+					<button class='btn btn-xl btn-primary' style="float: right;" ng-click="forumCtrl.post()">Post</button>
+				</div>
+				<div class="posts">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<p>USER FIRST CATERGORY</p>
+						</div>
+						<table class="table">
+							<thead>
+								<th>Name</th>
+								<th>Comments</th>
+								<th>Author</th>
+							</thead>
+							<tbody>
+								<td>Your first post</td>
+								<td>5</td>
+								<td>Student 1<i class="fa fa-clock-o"></i>13 Feb 2016, 13:21</td>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
   			<div id="user" class="col-xs-6 col-md-3">
-  				<h2>Hi User!</h2>
+  				<h2>Hi <span ng-bind="forumCtrl.user.first_name"></span> <span ng-bind="forumCtrl.user.last_name"></span>!</h2>
 			    <div class='nearby-events'>
 					<h4>Events near you</h4>
 					<ul>

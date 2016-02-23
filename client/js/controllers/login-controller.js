@@ -25,11 +25,7 @@ app.controller('loginController', function(sessionFactory, userFactory, $locatio
 				// _this.sessionErrors = sessionUser.errors;
 				console.log('error');
 			} else {	
-				if(sessionUser.user_type == 1){
-					$location.path('/student');
-				}else{ 
-					$location.path('/tutor');
-				}
+				$location.path('/forum');
 			}
 		});
 	}

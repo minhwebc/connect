@@ -18,7 +18,7 @@ module.exports = function(app) {
 
 	app.get('/getQuestions', users.getQuestions);
 
-
+	app.get('/getCategories', events.getCategories);
 	// app.get('/contact', shifts.contact);
 	// app.get('/allEmployees', employees.allEmployees);
 

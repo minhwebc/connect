@@ -48,8 +48,11 @@ module.exports = (function() {
 
 		addQuestion: function(req, res){
 			var values = {
-				content: req.body.message,
-				author_id: req.session.user.id
+				category_id: req.body.category.id,
+				content: req.body.content,
+				author_id: req.body.author_id,
+				created_at: (new Date()).toISOString().substring(0, 19).replace('T', ' '), 
+				updated_at: (new Date()).toISOString().substring(0, 19).replace('T', ' ')
 			}
 
 			var query = "insert into posts set ?";

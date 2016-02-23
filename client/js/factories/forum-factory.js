@@ -1,9 +1,16 @@
 app.factory('forumFactory', function($http){
 	var factory = {};
 
-	factory.askQuestion = function(newQuestion, callback){
-		$http.post('/addQuestion', newQuestion).success(function(user){
+	factory.post = function(newPost, callback){
+		console.log(newPost);
+		$http.post('/addQuestion', newPost).success(function(user){
 			callback(user);
+		});
+	}
+
+	factory.getCategories = function(callback){
+		$http.get('/getCategories').success(function(categories){
+			callback(categories);
 		});
 	}
 

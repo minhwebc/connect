@@ -4,16 +4,19 @@ app.controller('forumController', function(sessionFactory, forumFactory, $locati
  	//grab the user to retrieve events and user questions 
  	sessionFactory.getUser(function(user){
  		_this.user = user;
+ 		console.log(user);
  		forumFactory.getUserQuestions(user, function(questions){
  			_this.questions = questions;
  		})
  	})
 
+ 	forumFactory.getCategories(function(categories){
+ 		_this.categories = categories;
+ 	})
  	//post is clicked - store question with user into database
-	this.askQuestion = function(){
-		_this.question.user = _this.user;
-		
-		forumFactory.askQuestion(_this.question, function(data){
+	_this.post = function(){
+		_this.newPost.author_id = _this.user.id;
+		forumFactory.post(_this.newPost, function(data){
 			console.log(data);
 
 			/* 
@@ -28,4 +31,5 @@ app.controller('forumController', function(sessionFactory, forumFactory, $locati
 			}
 		})
 	}
+
 })

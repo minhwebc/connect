@@ -38,7 +38,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    opacity: .6;
+    opacity: .8;
     height: 350px;
 }
 
@@ -67,7 +67,7 @@
 	}
 #info{
 	width: 100%;
-	background: rgba(255,255,255,.1);
+	background: rgba(255,255,255,.3);
 	height: 40px;
 	padding-top: 10px; 
 } 
@@ -98,4 +98,15 @@
 		border-left: solid 1px #DDD;
 	}
 	#post{
+		padding: 30px 30px 60px;
+	}
+
+	.asked-questions{
+		margin: 0 -30px 30px -15px;
+	    padding: 0 30px 55px;
+	    border-bottom: 1px solid #DDD;
+	}	
+
+	.posts{
+
 	}

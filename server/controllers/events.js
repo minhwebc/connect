@@ -62,6 +62,16 @@ module.exports = (function() {
 					res.json(result);
 				}
 			})
+		},
+
+		getCategories: function(req, res){
+			connection.query('SELECT * FROM CATEGORIES', function(err, result) {
+				if (err) {
+					res.json(err);
+				} else {			
+					res.json(result);
+				}
+			})
 		}
 
 	}

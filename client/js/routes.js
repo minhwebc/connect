@@ -8,7 +8,7 @@ app.config(function ($routeProvider) {
         controllerAs: 'welCtrl',
         css: 'css/welcome.css'
     })
-    .when('/login/student', {
+    .when('/login', {
         templateUrl: 'partials/studentLogin.html',
         controller: 'loginController',
         controllerAs: 'lgnCtrl',

@@ -10,7 +10,7 @@ app.controller('stuRegisController', function(sessionFactory, loginFactory, $loc
 	// })
 	_this.regStudent = function(){
 		loginFactory.regiStudent(_this.newStudent, function(response){
-			console.log(response);
+			$location.path('/login')
 		});
 	}
 	_this.editPassword = function(data){

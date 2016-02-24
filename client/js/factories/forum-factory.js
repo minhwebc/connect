@@ -7,6 +7,17 @@ app.factory('forumFactory', function($http){
 			callback(user);
 		});
 	}
+	factory.getAllQuestions = function(callback){
+		$http.get('/getAllQuestions').success(function(questions){
+			callback(questions);
+		})
+	}
+
+	factory.getAllComments = function(post, index, callback){
+		$http.post('/getComments', post).success(function(comments){
+			callback(comments, index);
+		})
+	}
 
 	factory.getCategories = function(callback){
 		$http.get('/getCategories').success(function(categories){

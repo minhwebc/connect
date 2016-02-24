@@ -15,7 +15,9 @@ module.exports = function(app) {
 	app.get('/checkSession', users.getUser);
 
 	app.post('/addQuestion', users.addQuestion);
+	app.post('/getComments', users.getComments);
 
+	app.get('/getAllQuestions', users.getAllQuestions);
 	app.get('/getQuestions', users.getQuestions);
 
 	app.get('/getCategories', events.getCategories);

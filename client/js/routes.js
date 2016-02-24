@@ -55,6 +55,9 @@ app.config(function ($routeProvider) {
         controller: 'eventController',
         controllerAs: 'eventCtrl' 
     })
+    .when('/profile', {
+        templateUrl: 'partials/tutorAccount.html'
+    })
     .otherwise({
         redirectTo: '/'
     });

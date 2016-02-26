@@ -1,0 +1,54 @@
+<div class="row" style=" border-bottom: solid 1px #DDD; padding-bottom: 10px;">
+  <div class="col-md-9 col-md-push-3">
+  <div class="title">
+      <h4 ng-bind="postCtrl.currentPost.name"></h4>
+      <p><i class="fa fa-commenting"></i> by <span ng-bind="postCtrl.currentPost.first_name"></span> <span ng-bind="postCtrl.currentPost.last_name"></span> » <span ng-bind="postCtrl.currentPost.created_at | date:'medium'"></span></p>
+    </div>
+    <div style="margin-top:10px;">
+      <p ng-bind="postCtrl.currentPost.content"></p>
+    </div>
+  </div>
+    <div class="col-md-3 col-md-pull-9" style="border-right: solid 1px #DDD;">
+    <img class="avatar" src="" width="100" height="90" alt="User avatar">
+    <a href="" style="display: block;"><span ng-bind="postCtrl.currentPost.first_name"></span> <span ng-bind="postCtrl.currentPost.last_name"></span></a>
+    <dd class="porfiles-posts">
+      <strong>Posts: <span ng-bind="postCtrl.currentPost.posts_of_author.length"></span></strong>
+    </dd>
+    <dd class="porfiles-joined">
+      <strong>Joined: <span ng-bind="postCtrl.currentPost.joined_date | date:'medium'"></span></strong>
+    </dd>
+    <dd class="porfiles-location">
+      <strong>Location: <span ng-bind="postCtrl.currentPost.city"></span>, <span ng-bind="postCtrl.currentPost.state"></span></strong>
+    </dd>
+  </div>
+</div>
+<div ng-repeat="comment in postCtrl.currentPost.comments">
+  <div class="row" style=" border-bottom: solid 1px #DDD; padding-bottom: 10px; margin-top: 30px;">
+  <div class="col-md-9 col-md-push-3">
+    <div class="row">
+      <div class="col-md-8"><p ng-bind="comment.content"></p></div>
+      <div class="col-md-4" style="text-align: right;"><p style="font-size: 12px;" am-time-ago="comment.created_at"></p></div>
+    </div>
+  </div>
+    <div class="col-md-3 col-md-pull-9" style="border-right: solid 1px #DDD;">
+      <img class="avatar" src="" width="100" height="90" alt="User avatar">
+      <a href="" style="display: block;"><span ng-bind="comment.first_name"></span> <span ng-bind="comment.last_name"></span></a>
+      <dd class="porfiles-posts">
+        <strong>Posts: <span ng-bind="comment.posts.length"></span></strong>
+      </dd>
+      <dd class="porfiles-joined">
+        <strong>Joined: <span ng-bind="comment.joined_date | date:'medium'"></span></strong>
+      </dd>
+      <dd class="porfiles-location">
+        <strong>Location: <span ng-bind="comment.city"></span>, <span ng-bind="comment.state"></span></strong>
+      </dd>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+    <textarea type='text' placeholder='Post a reply...'style="width: 100%; height: 150px; margin-top: 10px;" ng-model='postCtrl.newComment.content'></textarea>
+    <button class='btn btn-xl btn-primary' style="float: right;" ng-click="postCtrl.postComment()">Post</button>
+  </div>
+  <div class=class="col-md-3 col-md-pull-9"></div>
+</div>

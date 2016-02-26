@@ -15,61 +15,27 @@ module.exports = function(app) {
 	app.get('/checkSession', users.getUser);
 
 	app.post('/addQuestion', users.addQuestion);
+	
 	app.post('/getComments', users.getComments);
 
+	app.post('/postComment', users.postComments);
+
 	app.get('/getAllQuestions', users.getAllQuestions);
+
 	app.get('/getQuestions', users.getQuestions);
 
+	app.get('/getPost/:id', users.getPost);
+
+	app.get('/getEvent/:id',  events.getEvent);
+	
+	app.get('/getPostsByUser/:id', users.getAllPostsbyUser)
+
 	app.get('/getCategories', events.getCategories);
-	// app.get('/contact', shifts.contact);
-	// app.get('/allEmployees', employees.allEmployees);
 
 	app.post('/createEvent', events.createEvent);
 
 	app.get('/getEvents', events.getEvents);
 
-	// app.delete('/deleteEmployee/:id', employees.deleteEmployee);
-
-	// app.post('/editEmployee', employees.editEmployee);
-
-	// app.post('/addEmployee', employees.addEmployee);
-
-	// app.post('/addShift', shifts.addShift);
-
-	// app.post('/authenticateUser', employees.login);
-
-	// app.post('/addLocation', locations.addLocation);
-
-	// app.post('/authenticateAdmin', admins.login);
-
-	// app.get('/destroySession', function(req, res){
-	// 	req.session.destroy();
-	// 	res.json(true);
-	// });
-
-	// app.get('/checkSession', employees.retrieveUser);
-
-	// app.get('/getMySchedule/:id', shifts.employeeShift);
-
-	// app.get('/getLocations', locations.getLocations);
-
-	// app.get('/getCategories', shifts.getCategories);
-
-	// // app.get('/availability/:id', function(req, res){
-	// // 	console.log(req.params.id);
-	// // });
-	
-	// app.get('/getAllShift', shifts.getAll);
-
-	// app.post('/getAllEmployees', shifts.getAllEmployees);
-
-	// app.post('/assign', shifts.assign);
-
-	// app.post('/unassign', shifts.unassign);
-	// app.post('/editPassword', employees.editPassword);
-
-	// // app.post('/getSchedule', function(req,res){
-		
-	// // })
+	app.get('/getParticipants/:id', events.getParticipants);
 
 };

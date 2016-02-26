@@ -1,5 +1,4 @@
-var app = angular.module('app', ['ngRoute']); 
-
+var app = angular.module('app', ['ngRoute', 'angularMoment']); 
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
@@ -35,6 +34,11 @@ app.config(function ($routeProvider) {
         controller: 'stuRegisController',
         controllerAs: 'stuReg'
     })
+    .when('/event/:id', {
+        templateUrl: 'partials/eventProfile.html',
+        controller: 'eventProfileController',
+        controllerAs: 'eventProCtrl'
+    })
     .when('/register/tutor', {
         templateUrl: 'partials/tutorRegistration.html',
         controller: 'tuRegisController',
@@ -57,6 +61,12 @@ app.config(function ($routeProvider) {
     })
     .when('/profile', {
         templateUrl: 'partials/tutorAccount.html'
+    })
+    .when('/post/:id', {
+        templateUrl: 'partials/postProfile.html',
+        css: 'css/post.css',
+        controller: 'postController',
+        controllerAs:'postCtrl'
     })
     .otherwise({
         redirectTo: '/'

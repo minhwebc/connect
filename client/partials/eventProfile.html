@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-6">
+	<h1 ng-bind="eventProCtrl.event.name">This is event profile</h1>
+	<h3>Location: <i class="fa fa-map-marker"></i> <span ng-bind="eventProCtrl.event.city"></span>,<span ng-bind="eventProCtrl.event.state"></span></h3>
+	<h3>Category: <i class="fa fa-tag"></i> <span ng-bind="eventProCtrl.event.event_category"></span></h3>
+	<h3>Address: <i class="fa fa-location-arrow"></i> <span ng-bind="eventProCtrl.event.address"></span></h3>
+	<h3>Created by: <span ng-bind="eventProCtrl.event.first_name"></span> <span ng-bind="eventProCtrl.event.last_name"></span> » <span ng-bind="eventProCtrl.event.created_at | date:'MM/dd/yyyy'"></span></h3>
+	<h3>Description: </h3><span style="display: block;"ng-bind="eventProCtrl.event.description"></span>
+	<button style="display: block; "class="btn btn-primary btn-lg pull-right" ng-click="eventProCtrl.join()">Join</button>
+	</div>
+  <div class="col-md-6">
+  	<div class="panel panel-default">
+  		<!-- Default panel contents -->
+  		<div class="panel-heading">Participants</div>
+  		<input type="text" class="form-control" placeholder="Search participant..." ng-model="searchText" style="width: 30%;float: right;">
+	  <!-- Table -->
+	  <table class="table">
+	    <thead>
+	    	<tr>
+	    		<th>Name</th>
+	    		<th>From</th>
+	    	</tr>
+	    </thead>
+	    <tbody>
+	    	<tr ng-repeat ="participant in eventProCtrl.event.participants | filter: searchText">
+	    		<td>{{participant.first_name}} {{participant.last_name}}</td>
+	    		<td>{{participant.city}}, {{participant.state}}</td>
+	    	</tr>
+	    </tbody>
+	  </table>
+	</div>
+
+  </div>
+</div>

@@ -13,12 +13,24 @@ app.factory('eventFactory', function($http){
 		});
 	}
 
+	factory.getEvent = function(eventID, callback){
+		$http.get('/getEvent/' + eventID).success(function(event){
+			callback(event);
+		})
+	}
+	
 	factory.join = function(eventID, callback){
 		var event = {
 			id: eventID
 		}
 		$http.post('/joinEvent', event).success(function(response){
 			callback(response);
+		})
+	}
+
+	factory.getAllParticipants = function(eventID, callback){
+		$http.get('/getParticipants/'+eventID).success(function(participants){
+			callback(participants);
 		})
 	}
 

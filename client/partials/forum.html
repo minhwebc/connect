@@ -63,9 +63,9 @@
 					<button class='btn btn-xl btn-primary' style="float: right;" ng-click="forumCtrl.post()">Post</button>
 				</div>
 				<div class="posts">
-					<div class="panel panel-default">
+					<div class="panel panel-default" ng-repeat="category in forumCtrl.categories">
 						<div class="panel-heading">
-							<p>ACT/SAT TESTING</p>
+							<p ng-bind="category.name"></p>
 							<input type="text" class="form-control" placeholder="Search..." ng-model="searchText">
 						</div>
 						<table class="table table-hover">
@@ -77,54 +77,10 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat = "post in forumCtrl.posts | filter: searchText" >
-									<td ng-show="post.category_id == 1"><a href="#/post/{{post.id}}"><span ng-bind="post.name" class="hvr-push"></span></a></td>
-									<td ng-show="post.category_id == 1" ng-bind="post.comments.length"></td>
-									<td ng-show="post.category_id == 1"><a href="#/proile/{{post.user_id}}"><span ng-bind="post.first_name"></span> <span ng-bind="post.last_name"></span></a></td>
-									<td ng-show="post.category_id == 1"><span ng-bind="post.created_at | date:'medium'"></span></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<p>JOB RESUME</p>
-							<input type="text" class="form-control" placeholder="Search..." ng-model="searchText2">
-						</div>
-						<table class="table table-hover">
-							<thead>
-								<th><i class="fa fa-bookmark"></i> Name</th>
-								<th><i class="fa fa-comment"></i> Comments</th>
-								<th><i class="fa fa-user"></i> Author</th>
-								<th><i class="fa fa-clock-o"></i> Created at</th>
-							</thead>
-							<tbody>
-								<tr ng-repeat = "post in forumCtrl.posts | filter: searchText2">
-									<td ng-show="post.category_id == 2"><a href="#/post/{{post.id}}"><span ng-bind="post.name" class="hvr-push"></span></a></td>
-									<td ng-show="post.category_id == 2" ng-bind="post.comments.length"></td>
-									<td ng-show="post.category_id == 2"><a href="#/proile/{{post.user_id}}"><span ng-bind="post.first_name"></span> <span ng-bind="post.last_name"></span></a></td>
-									<td ng-show="post.category_id == 2"><span ng-bind="post.created_at | date:'medium'"></span></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<p>OTHERS</p>
-							<input type="text" class="form-control" placeholder="Search..." ng-model="searchText3">
-						</div>
-						<table class="table table-hover">
-							<thead>
-								<th><i class="fa fa-bookmark"></i> Name</th>
-								<th><i class="fa fa-comment"></i> Comments</th>
-								<th><i class="fa fa-user"></i> Author</th>
-								<th><i class="fa fa-clock-o"></i> Created at</th>
-							</thead>
-							<tbody>
-								<tr ng-repeat = "post in forumCtrl.posts | filter: searchText3">
-									<td ng-show="post.category_id == 3"><a href="#/post/{{post.id}}"><span ng-bind="post.name" class="hvr-push"></span></a></td>
-									<td ng-show="post.category_id == 3" ng-bind="post.comments.length"></td>
-									<td ng-show="post.category_id == 3"><a href="#/proile/{{post.user_id}}"><span ng-bind="post.first_name"></span> <span ng-bind="post.last_name"></span></a></td>
-									<td ng-show="post.category_id == 3	"><span ng-bind="post.created_at | date:'medium'"></span></td>
+									<td ng-show="post.category_id == category.id"><a href="#/post/{{post.id}}"><span ng-bind="post.name" class="hvr-push"></span></a></td>
+									<td ng-show="post.category_id == category.id" ng-bind="post.comments.length"></td>
+									<td ng-show="post.category_id == category.id"><a href="#/proile/{{post.user_id}}"><span ng-bind="post.first_name"></span> <span ng-bind="post.last_name"></span></a></td>
+									<td ng-show="post.category_id == category.id"><span ng-bind="post.created_at | date:'medium'"></span></td>
 								</tr>
 							</tbody>
 						</table>
@@ -153,17 +109,8 @@
 							<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.locate(event.id)" ng-show="event.city != forumCtrl.user.city">{{event.name}}</button>
 						</div>
 					</div>
-  				</div>
-			    
+  				</div> 
 	  		</div>
 		</div>
 	</div>
-<!-- 	<button ng-click="forumCtrl.askQuestion()" class='btn btn-xs btn-primary'>Post</button>
- -->	
- <!-- <h4>Questions you have asked</h4>
-	<ul>
-		<li>Question 1</li>
-		<li>Question 2</li>
-		<li>Question 3</li>
-	</ul> -->
 </div>

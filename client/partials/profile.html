@@ -1,0 +1,41 @@
+<div ng-show="profileCtrl.currentUser.user_type === 1">
+
+	<div ng-repeat="event in stuCtrl.events">
+		<p ng-bind="event.name"></p>
+		<p ng-bind="event.address"></p>
+		<button ng-click = "stuCtrl.join(event.id)">Join</button>
+	</div>
+
+	<h2>Welcome <span ng-bind="profileCtrl.currentUser.first_name"></span>!</h2>
+	<div class='upcoming-events'>
+		<h4>Events coming up within the next week</h4>
+		<ul>
+			<li>Event1</li>
+			<li>Event2</li>
+			<li>Event3</li>
+			<li>Event3</li>
+		</ul>
+
+	</div>
+	<div class='joined-events'>
+		<h4>Events that you have joined</h4>
+		<ul>
+			<li>Event1</li>
+			<li>Event2</li>
+			<li>Event3</li>
+			<li>Event3</li>
+		</ul>
+	</div>
+	<div class='asked-questions'>
+		<h4>Questions you have asked</h4>
+		<ul>
+			<li>Question 1</li>
+			<li>Question 2</li>
+			<li>Question 3</li>
+		</ul>
+	</div>
+
+</div>
+
+<div ng-show="profileCtrl.currentUser.user_type === 2">
+</div>

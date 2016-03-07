@@ -66,6 +66,7 @@ app.controller('forumController', function(sessionFactory, forumFactory, eventFa
 		 			forumFactory.getAllComments(_this.posts[i], i, function(comments, index){
  				_this.posts[index].comments = comments;
  			})
+		 	_this.newPost = {};
  		}
  		console.log(_this.posts);
  	})

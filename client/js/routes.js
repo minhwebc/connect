@@ -1,5 +1,6 @@
 var app = angular.module('app', ['ngRoute', 'angularMoment', 'ngMaterial']); 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $mdThemingProvider) {
+  $mdThemingProvider.theme('altTheme').primaryPalette('red');
   $routeProvider
     .when('/', {
         templateUrl: 'partials/welcome.html',
@@ -66,6 +67,12 @@ app.config(function ($routeProvider) {
         templateUrl: 'partials/postProfile.html',
         css: 'css/post.css',
         controller: 'postController',
+        controllerAs:'postCtrl'
+    })
+    .when('/message', {
+        templateUrl: 'partials/message.html',
+        css: 'css/message.css',
+        controller: 'messageController',
         controllerAs:'postCtrl'
     })
     .otherwise({

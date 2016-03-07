@@ -1,6 +1,6 @@
-app.controller('forumController', function(sessionFactory, forumFactory, eventFactory, $location){
+app.controller('forumController', function(sessionFactory, forumFactory, eventFactory, $location, $mdDialog, $mdMedia){
  	var _this = this;
-
+ 	
  	//grab the user to retrieve events and user questions 
  	sessionFactory.getUser(function(user){
  		_this.user = user;
@@ -33,7 +33,26 @@ app.controller('forumController', function(sessionFactory, forumFactory, eventFa
  		_this.categories = categories;
  	})
 
- 	_this
+ 	_this.showTabDialog = function(ev) {
+	    $mdDialog.show({
+	      templateUrl: 'partials/eventprofileshow.html',
+	      controller: 'eventShowController',
+	      controllerAs: 'eventShCtrl',
+	      parent: angular.element(document.body),
+	      targetEvent: 1,
+	      locals : {
+            eventID : ev
+          },
+	      clickOutsideToClose:true
+	    })
+	     .then(function(answer) {
+	     	if(answer == 1){
+          		$location.path('/event/' + ev);
+          	}else{
+          		console.log('back');
+          	}
+        });
+	};
  	//post is clicked - store question with user into database
 	_this.post = function(){
 		_this.newPost.author_id = _this.user.id;

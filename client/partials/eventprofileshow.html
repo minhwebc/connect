@@ -1,0 +1,55 @@
+ <md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Event</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="row">
+		<div class="col-md-6">
+			<h1 ng-bind="eventShCtrl.event.name">This is event profile</h1>
+			<h3>Location: <i class="fa fa-map-marker"></i> <span ng-bind="eventShCtrl.event.city"></span>,<span ng-bind="eventShCtrl.event.state"></span></h3>
+			<h3>Category: <i class="fa fa-tag"></i> <span ng-bind="eventShCtrl.event.event_category"></span></h3>
+			<h3>Address: <i class="fa fa-location-arrow"></i> <span ng-bind="eventShCtrl.event.address"></span></h3>
+			<h3>Created by: <span ng-bind="eventShCtrl.event.first_name"></span> <span ng-bind="eventShCtrl.event.last_name"></span> » <span ng-bind="eventShCtrl.event.created_at | date:'MM/dd/yyyy'"></span></h3>
+			<h3>Description: </h3><span style="display: block;"ng-bind="eventShCtrl.event.description"></span>
+			</div>
+		  <div class="col-md-6">
+		  	<div class="panel panel-default">
+		  		<div class="panel-heading">Participants</div>
+		  		<input type="text" class="form-control" placeholder="Search participant..." ng-model="searchText" style="width: 30%;float: right;">
+			  <table class="table">
+			    <thead>
+			    	<tr>
+			    		<th>Name</th>
+			    		<th>From</th>
+			    	</tr>
+			    </thead>
+			    <tbody>
+			    	<tr ng-repeat ="participant in eventShCtrl.event.participants | filter: searchText">
+			    		<td>{{participant.first_name}} {{participant.last_name}}</td>
+			    		<td>{{participant.city}}, {{participant.state}}</td>
+			    	</tr>
+			    </tbody>
+			  </table>
+			</div>
+		  </div>
+	</div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+        More on this
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="eventShCtrl.answer(1)">
+       Go to the event
+      </md-button>
+      <md-button ng-click="eventShCtrl.answer(2)" style="margin-right:20px;">
+        Back
+      </md-button>
+    </md-dialog-actions>

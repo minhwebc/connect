@@ -1,6 +1,6 @@
 app.factory('forumFactory', function($http){
 	var factory = {};
-
+	
 	factory.post = function(newPost, callback){
 		console.log(newPost);
 		$http.post('/addQuestion', newPost).success(function(user){

@@ -1,16 +1,3 @@
-<!-- <div class='leftside'>
-</div>
-
-<div class='asked-questions'>
-	<input type='text' ng-model='forumCtrl.question.message' placeholder='Ask a question'>
-	<button ng-click="forumCtrl.askQuestion()" class='btn btn-xs btn-primary'>Post</button>
-	<h4>Questions you have asked</h4>
-	<ul>
-		<li>Question 1</li>
-		<li>Question 2</li>
-		<li>Question 3</li>
-	</ul>
-</div> -->
 <div class="header-bg"></div>
 <div class="inner container">
 	<div id="first">
@@ -93,14 +80,14 @@
   					<a role="button" class="btn btn-success" href="#/createEvent">Create an event</a>
   					<h4>Events happening near your place</h4>
   					<div class="list-group" style="width: 85%;">
-						<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.locate(event.id)" ng-show="event.city == forumCtrl.user.city">{{event.name}}</button>
+						<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.showTabDialog(event.id)" ng-show="event.city == forumCtrl.user.city">{{event.name}}</button>
 					</div>
   				</div>
   				<div class="forStudent" ng-show="forumCtrl.user.user_type == 1">
 					<div class='nearby-events'>
 						<h4>Events near you</h4>
 						<div class="list-group" style="width: 85%;">
-							<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.locate(event.id)" ng-show="event.city == forumCtrl.user.city">{{event.name}}</button>
+							<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.showTabDialog(event.id)" ng-show="event.city == forumCtrl.user.city">{{event.name}}</button>
 						</div>
 					</div>
 					<div class='other-events'>
@@ -110,7 +97,47 @@
 						</div>
 					</div>
   				</div> 
-	  		</div>
+  				<div class="latest-posts">
+  					<h3>Recent posts</h3>
+  					<hr>
+  					<ul class="recent">
+  						<li><a href="#" class="hvr-icon-forward">A sample poll</a></li>
+  						<li><a href="#" class="hvr-icon-forward">A note on something</a></li>
+  						<li><a href="#" class="hvr-icon-forward">Hey guys</a></li>
+  						<li><a href="#" class="hvr-icon-forward">Final test</a></li>
+  					</ul>
+  				</div>
+  				<hr>
+				<div ng-cloak>
+				  <md-content>
+				    <md-tabs md-dynamic-height md-border-bottom>
+				      <md-tab label="<i class='fa fa-refresh fa-spin'></i>">
+				        <md-content class="md-padding">
+				          <p>In total there are 2 users online :: 0 registered, 0 hidden and 2 guests</p>
+				          <hr>
+				          <p>Registered users: No registered users</p>
+				          <hr>
+				          <p>Most users ever online was 16 on 25 Dec 2015, 07:45</p>
+				        </md-content>
+				      </md-tab>
+				      <md-tab label="<i class='fa fa-bar-chart'></i>">
+				        <md-content class="md-padding">
+				        	Total posts: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>76</strong><br>
+							Total topics &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3</strong><br>
+							Total members &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19</strong><br>
+							<hr>
+							<p>Our newest member: &nbsp;&nbsp;<a href="#">John123</a></p>
+				        </md-content>
+				      </md-tab>
+				      <md-tab label="<i class='fa fa-birthday-cake'></i>">
+				        <md-content class="md-padding">
+				          <p>No birthday is happening this month</p>
+				        </md-content>
+				      </md-tab>
+				    </md-tabs>
+				  </md-content>
+				</div>
+  	  		</div>
 		</div>
 	</div>
 </div>

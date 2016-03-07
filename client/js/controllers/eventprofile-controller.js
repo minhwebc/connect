@@ -9,7 +9,6 @@ app.controller('eventProfileController', function($routeParams, sessionFactory, 
 			console.log(_this.event);
 		})
 	})
-
 	_this.join = function(){
 		eventFactory.join(_this.event.id, function(response){
 			eventFactory.getEvent($routeParams.id, function(event){

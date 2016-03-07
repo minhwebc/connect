@@ -19,10 +19,6 @@ app.config(function ($routeProvider) {
         controllerAs: 'lgnCtrl',
         css: 'css/login.css'
     })
-    .when('/dashboard', {
-        templateUrl: 'partials/dashboard.html',
-        css: 'css/dashboard.css'
-    })
     .when('/forum', {
         templateUrl: 'partials/forum.html',
         controller: 'forumController',
@@ -59,8 +55,11 @@ app.config(function ($routeProvider) {
         controller: 'eventController',
         controllerAs: 'eventCtrl' 
     })
-    .when('/profile', {
-        templateUrl: 'partials/tutorAccount.html'
+    .when('/profile/', {
+        templateUrl: 'partials/profile.html',
+        controller: 'profileController',
+        controllerAs: 'profileCtrl',
+        css: 'css/dashboard.css'
     })
     .when('/post/:id', {
         templateUrl: 'partials/postProfile.html',

@@ -7,6 +7,11 @@ app.factory('userFactory', function($http){
 		});
 	}
 
+	factory.getUser = function(userID, callback){
+		$http.get('/getUserInfo/'+userID).success(function(userInfo){
+			callback(userInfo);
+		})
+	}
 	return factory;
 })
 

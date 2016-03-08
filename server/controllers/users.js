@@ -136,6 +136,18 @@ module.exports = (function() {
 					res.json(result);
 				}
 			});
+		},
+
+		getInfo: function(req, res){
+			var query = "Select * from users ";
+				query += "where users.id = " + req.params.id;
+			connection.query(query, function(err, result) {
+				if(err){
+					res.json(err);
+				} else {
+					res.json(result);
+				}
+			});
 		}
 	}
 })();

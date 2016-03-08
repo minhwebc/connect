@@ -42,15 +42,24 @@
 	    <div class="row">
 	      	<div id="post" class="col-xs-12 col-sm-6 col-md-9">
 				<div class="asked-questions" class="col-sm-9 rightside">
-					<span class="label label-default" style="font-size: 17px;"><i class="fa fa-font"></i>&nbsp;&nbsp;Topic name:</span>&nbsp;&nbsp;<input type="text" placeholder="Give your post a name.." ng-model="forumCtrl.newPost.name"></input>
-					<textarea type='text' placeholder='Ask a question...'style="width: 100%; height: 150px; margin-top: 10px;" ng-model='forumCtrl.newPost.content'></textarea>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-font"></i>&nbsp;&nbsp;Topic name:&nbsp;&nbsp;</span>
+					  <input type="text" class="form-control" placeholder="Topic name" aria-describedby="basic-addon1" ng-model="forumCtrl.newPost.name">
+					</div>
+					<div class="form-group" style="margin-top: 12px;">
+  						<label for="comment"><span class="label label-primary" style="font-size: 22px;"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Content</span></label>
+  						<textarea style="margin-top: 4px;"class="form-control" rows="4" id="comment" placeholder='Content of your post..' ng-model='forumCtrl.newPost.content'></textarea>
+					</div>
 					<ul class="options">
-						<li><span class="label label-info"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Category:</span> 
-						<select ng-model='forumCtrl.newPost.category' ng-options="category.name for category in forumCtrl.categories track by category.id"><option value=''>Select Category</option>
-						</select></li>
-						<li><span class="label label-info"><i class="fa fa-file-image-o"></i><a href="#/needtoimplement"style="color: white">&nbsp;&nbsp;Add photos</a></span></li>
+						<li>
+							<div class="form-group" style="display: inline-block; width: 500px;">
+  								<label for="sel1"><span class="label label-primary"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Category</span> </label>
+  								<select style="width: 70%; display: inline-block;"class="form-control" id="sel1" ng-model='forumCtrl.newPost.category' ng-options="category.name for category in forumCtrl.categories track by category.id"><option value=''>Select Category</option>
+								</select>
+							</div>
+						</li>	
 					</ul>
-					<button class='btn btn-xl btn-primary' style="float: right;" ng-click="forumCtrl.post()">Post</button>
+					<button class='btn btn-xl btn-primary' style="float: right; width: 30%;" ng-click="forumCtrl.post()">Post</button>
 				</div>
 				<div class="posts">
 					<div class="panel panel-default" ng-repeat="category in forumCtrl.categories">
@@ -69,7 +78,7 @@
 								<tr ng-repeat = "post in forumCtrl.posts | filter: searchText" >
 									<td ng-show="post.category_id == category.id"><a href="#/post/{{post.id}}"><span ng-bind="post.name" class="hvr-push"></span></a></td>
 									<td ng-show="post.category_id == category.id" ng-bind="post.comments.length"></td>
-									<td ng-show="post.category_id == category.id"><a href="#/proile/{{post.user_id}}"><span ng-bind="post.first_name"></span> <span ng-bind="post.last_name"></span></a></td>
+									<td ng-show="post.category_id == category.id"><a href="#/profile/{{post.user_id}}"><span ng-bind="post.first_name"></span> <span ng-bind="post.last_name"></span></a></td>
 									<td ng-show="post.category_id == category.id"><span ng-bind="post.created_at | date:'medium'"></span></td>
 								</tr>
 							</tbody>
@@ -96,7 +105,7 @@
 					<div class='other-events'>
 						<h4>Other Events</h4>
 						<div class="list-group" style="width: 85%;">
-							<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.locate(event.id)" ng-show="event.city != forumCtrl.user.city">{{event.name}}</button>
+							<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.showTabDialog(event.id)" ng-show="event.city != forumCtrl.user.city">{{event.name}}</button>
 						</div>
 					</div>
   				</div> 

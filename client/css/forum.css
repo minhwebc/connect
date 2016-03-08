@@ -17,11 +17,10 @@ body {
 	list-style-type: none;
 }
 	.options li{
-		font-size: 17px;
+		font-size: 22px;
 		padding: 0 20px 0 20px;
 		margin-right: -10px;
 		display: inline;
-		border-right: 1px solid #e5e5e5;
 	}
 .inner-container{
 	display: block;

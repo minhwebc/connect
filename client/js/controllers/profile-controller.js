@@ -1,4 +1,4 @@
-app.controller('profileController', function(sessionFactory, $location){
+app.controller('profileController', function($routeParams, sessionFactory, userFactory, $location){
  	var _this = this;
  	sessionFactory.getUser(function(currentUser){
 		if(currentUser) {
@@ -9,4 +9,10 @@ app.controller('profileController', function(sessionFactory, $location){
 			$location.path('/')
 		}
 	})
+
+	userFactory.getUser($routeParams.id, function(user){
+		_this.user = user;
+	})
+
+
 })

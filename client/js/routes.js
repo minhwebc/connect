@@ -56,7 +56,7 @@ app.config(function ($routeProvider, $mdThemingProvider) {
         controller: 'eventController',
         controllerAs: 'eventCtrl' 
     })
-    .when('/profile/', {
+    .when('/profile/:id', {
         templateUrl: 'partials/profile.html',
         controller: 'profileController',
         controllerAs: 'profileCtrl',
@@ -74,7 +74,14 @@ app.config(function ($routeProvider, $mdThemingProvider) {
         controller: 'messageController',
         controllerAs:'postCtrl'
     })
+    .when('/needtoimplement', {
+        templateUrl: 'partials/underconstruction.html'
+    })
+    .when('/resources', {
+        templateUrl: 'partials/resource.html',
+        css: 'css/resource.css'
+    })
     .otherwise({
-        redirectTo: '/'
+        redirectTo: '/needtoimplement'
     });
 });

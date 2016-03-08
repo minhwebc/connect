@@ -36,6 +36,8 @@ module.exports = function(app) {
 
 	app.get('/getEvents', events.getEvents);
 
+	app.get('/getUserInfo/:id', users.getInfo);
+
 	app.get('/getParticipants/:id', events.getParticipants);
 
 };

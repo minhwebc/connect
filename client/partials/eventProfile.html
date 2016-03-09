@@ -6,7 +6,13 @@
 	<h3>Address: <i class="fa fa-location-arrow"></i> <span ng-bind="eventProCtrl.event.address"></span></h3>
 	<h3>Created by: <span ng-bind="eventProCtrl.event.first_name"></span> <span ng-bind="eventProCtrl.event.last_name"></span> » <span ng-bind="eventProCtrl.event.created_at | date:'MM/dd/yyyy'"></span></h3>
 	<h3>Description: </h3><span style="display: block;"ng-bind="eventProCtrl.event.description"></span>
-	<button style="display: block; "class="btn btn-primary btn-lg pull-right" ng-click="eventProCtrl.join()">Join</button>
+	<button style="display: block; width: 40%;"class="btn btn-primary btn-lg pull-right" ng-click="eventProCtrl.join()">Join</button>
+	<br>
+	<br>
+	<h2>Map of your event</h2>
+	<ui-gmap-google-map center='eventProCtrl.map.center' zoom='eventProCtrl.map.zoom'>
+		<ui-gmap-marker coords="eventProCtrl.marker.coords" options="eventProCtrl.marker.options" events="eventProCtrl.marker.events" idkey="eventProCtrl.marker.id">
+	</ui-gmap-google-map>
 	</div>
   <div class="col-md-6">
   	<div class="panel panel-default">

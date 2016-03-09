@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+.navbar{
+    background-image: url('./../images/school.png');
+}
 .title{
 	border-bottom: solid 1px #DDD;
 }

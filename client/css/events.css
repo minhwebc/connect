@@ -1,0 +1,8 @@
+.navbar{
+    background-image: url('./../images/school.png');
+}
+
+.event-card{
+	width: 230px;
+	display: inline-block;
+}

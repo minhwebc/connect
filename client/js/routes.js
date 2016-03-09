@@ -1,6 +1,18 @@
-var app = angular.module('app', ['ngRoute', 'angularMoment', 'ngMaterial']); 
-app.config(function ($routeProvider, $mdThemingProvider) {
-  $mdThemingProvider.theme('altTheme').primaryPalette('red');
+var app = angular.module('app', ['ngRoute', 'angularMoment', 'ngMaterial', 'uiGmapgoogle-maps']);
+app.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyBdXLmCUxcPmbdYR215zW4RoiUhIZlk5TU',
+        v: '3.22', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
+}) 
+app.config(['uiGmapGoogleMapApiProvider', function(GoogleMapApiProviders) {
+        GoogleMapApiProviders.configure({
+            china: true
+        });
+    }]
+)
+app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
         templateUrl: 'partials/welcome.html',
@@ -33,6 +45,7 @@ app.config(function ($routeProvider, $mdThemingProvider) {
     })
     .when('/event/:id', {
         templateUrl: 'partials/eventProfile.html',
+        css: 'css/eventprofile.css',
         controller: 'eventProfileController',
         controllerAs: 'eventProCtrl'
     })
@@ -80,6 +93,16 @@ app.config(function ($routeProvider, $mdThemingProvider) {
     .when('/resources', {
         templateUrl: 'partials/resource.html',
         css: 'css/resource.css'
+    })
+    .when('/about', {
+        templateUrl: 'partials/about.html',
+        css: 'css/about.css'
+    })
+    .when('/events', {
+        templateUrl: 'partials/events.html',
+        css :'css/events.css',
+        controller: 'eventAllController',
+        controllerAs:'eventAllCtrl'
     })
     .otherwise({
         redirectTo: '/needtoimplement'

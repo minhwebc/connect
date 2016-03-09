@@ -6,6 +6,12 @@ app.factory('eventFactory', function($http){
 			callback(response);
 		});
 	}
+	factory.getLocation = function(address, callback){
+			console.log(address);
+			$http.get('https://maps.googleapis.com/maps/api/geocode/json?address='+ address + '&key=AIzaSyBdXLmCUxcPmbdYR215zW4RoiUhIZlk5TU').success(function(response){
+				callback(response);
+			});
+	}
 
 	factory.getEvents = function(callback){
 		$http.get('/getEvents').success(function(events){

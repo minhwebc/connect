@@ -22,17 +22,15 @@
 <body>
 	<div class="navbar" ng-controller="HeaderController">
 	    <ul class="nav navbar-nav" id="nav">
-	    	<li><div id="logo"><i class="fa fa-connectdevelop fa-2x"></i> <h2>Connect</h2></div></li>
-	        <li><a href="#/" class="button hvr-underline-from-center">Home</a></li>
+	    	<li><div id="logo"><a href="#/"><i class="fa fa-connectdevelop fa-2x"></i> <h2>Connect2Achieve</h2></a></div></li>
 	        <li><a href="#/forum" class="button hvr-underline-from-center">Forum</a></li>
 	        <li><a href="#/resources" class="button hvr-underline-from-center">Resources</a></li>
+	        <li><a href="#/events" class="button hvr-underline-from-center">Events</a></li>
 	        <li><a href="#/about" class="button hvr-underline-from-center">About Us</a></li>
 	        <li class="dropdown" style="vertical-align: right;">
           		<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick links<span class="caret"></span></a>
 	          	<ul class="dropdown-menu">
 		            <li><a href="#/profile" class="button hvr-underline-from-left" style="color : black;">Profile</a></li>
-		            <li><a href="#/message" class="button hvr-underline-from-left" style="color : black;">Messages</a></li>
-		            <li><a href="#" class="button hvr-underline-from-left" style="color : black;">Something else here</a></li>
 		            <li role="separator" class="divider"></li>
 		            <li><a href="#" class="button hvr-underline-from-left" style="color : black;">Log Out</a></li>
 	          	</ul>
@@ -51,6 +49,11 @@
  	<script src="angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
 	<script src="moment/moment.js"></script>
 	<script src="angular-moment/angular-moment.js"></script>
+
+	<!-- Load angular Map -->
+	<script src='angular-google-maps/node_modules/lodash/lodash.min.js'></script>
+	<script src='angular-google-maps/node_modules/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
+	<script src='angular-google-maps/dist/angular-google-maps.min.js'></script>
 
 	<!-- Initialization and Routes -->
 	<script src="js/routes.js"></script>
@@ -81,6 +84,7 @@
 	<script src="js/controllers/forum-controller.js"></script>
 	<script src="js/controllers/message-controller.js"></script>
 	<script src="js/controllers/profile-controller.js"></script>
+	<script src="js/controllers/eventAll-controller.js"></script>
 
 	<!-- Directives -->
 	<script type='text/javascript' src="js/directives/directives.js"></script>

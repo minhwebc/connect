@@ -1,0 +1,11 @@
+<div class="event-card" ng-repeat="event in eventAllCtrl.events">
+	<img style="width: 220px; margin: 0 auto; "src='./../images/laptop.jpg'>
+	<div class="info" style="text-align: center;">
+		<h3 ng-bind="event.name" style="text-align: left;"></h3>
+		<br>
+		<em><p style="text-align: left;"><span ng-bind="event.date | date:'EEEE, MMM d'"></span></p></em>
+		<em><p style="text-align: left;">From <span ng-bind="event.start_time | date:'shortTime'"></span> To <span ng-bind="event.end_time | date:'shortTime'"></span></p></em>
+		<em><p style="text-align: left;">{{event.location}}</p></em>
+		<a class="btn btn-primary btn-lg" href="#/event/{{event.id}}" role="button">Check It Out</a>
+	</div>	
+</div>

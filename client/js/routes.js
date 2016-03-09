@@ -69,7 +69,7 @@ app.config(function ($routeProvider) {
         controller: 'eventController',
         controllerAs: 'eventCtrl' 
     })
-    .when('/profile/:id', {
+    .when('/profile/', {
         templateUrl: 'partials/profile.html',
         controller: 'profileController',
         controllerAs: 'profileCtrl',

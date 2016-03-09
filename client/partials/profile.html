@@ -1,4 +1,4 @@
-<div ng-show="profileCtrl.currentUser.user_type === 1">
+<div class='profile-container'>
 
 	<div ng-repeat="event in stuCtrl.events">
 		<p ng-bind="event.name"></p>
@@ -6,36 +6,39 @@
 		<button ng-click = "stuCtrl.join(event.id)">Join</button>
 	</div>
 
-	<h2>Welcome <span ng-bind="profileCtrl.currentUser.first_name"></span>!</h2>
+	<h2><span ng-bind="profileCtrl.currentUser.first_name"></span></h2>
+	<p><span ng-show="profileCtrl.currentUser.user_type === 1">Student</span><span ng-show="profileCtrl.currentUser.user_type === 2">Tutor</span>, <span ng-bind="profileCtrl.currentUser.gender"></span>, 21</p>
+
+	<h4>About</h4>
+	<ul>
+		<li>Name: <span ng-bind="profileCtrl.currentUser.first_name"></span> <span ng-bind="profileCtrl.currentUser.last_name"></span></li>
+		<li>Email: <span ng-bind="profileCtrl.currentUser.email_address"></span></li>
+		<li>Location: <span ng-bind="profileCtrl.currentUser.city"></span>, <span ng-bind="profileCtrl.currentUser.state"></span></li>
+	</ul>
+
+	<button ng-repeat="event in forumCtrl.events" type="button" class="list-group-item" ng-click="forumCtrl.showTabDialog(event.id)" ng-show="event.city == forumCtrl.user.city">{{event.name}}</button>
+
+
 	<div class='upcoming-events'>
-		<h4>Events coming up within the next week</h4>
+		<h4>Upcoming Events Near You</h4>
+		<p class='min-font' ng-show="profileCtrl.events.length === 0">There are no upcoming events in your area.</p>
 		<ul>
-			<li>Event1</li>
-			<li>Event2</li>
-			<li>Event3</li>
-			<li>Event3</li>
+			<li ng-repeat="event in profileCtrl.events" ng-show="event.city === profileCtrl.currentUser.city">
+				<a href="#/event/{{event.id}}"><span ng-bind='event.name'></span></a> <br>
+				<span class='min-font' ng-bind='event.date | date: "medium"'></span> 
+			</li>
 		</ul>
 
-	</div>
-	<div class='joined-events'>
-		<h4>Events that you have joined</h4>
-		<ul>
-			<li>Event1</li>
-			<li>Event2</li>
-			<li>Event3</li>
-			<li>Event3</li>
-		</ul>
 	</div>
 	<div class='asked-questions'>
-		<h4>Questions you have asked</h4>
+		<h4>Recent Forum Activity</h4>
+		<p class='min-font' ng-show="profileCtrl.posts.length === 0">You haven't made any post!</p>
 		<ul>
-			<li>Question 1</li>
-			<li>Question 2</li>
-			<li>Question 3</li>
+			<li ng-repeat="p in profileCtrl.posts">
+				<a href="#/post/{{p.id}}"><span ng-bind='p.name'></span></a> <br>
+				<span class='min-font'> Last post: <span ng-bind='p.updated_at | date: "medium"'></span> </span>
+			</li>
 		</ul>
 	</div>
 
-</div>
-
-<div ng-show="profileCtrl.currentUser.user_type === 2">
 </div>

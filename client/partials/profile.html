@@ -20,10 +20,14 @@
 
 
 	<div class='upcoming-events'>
-		<h4>Upcoming Events Near You</h4>
-		<p class='min-font' ng-show="profileCtrl.events.length === 0">There are no upcoming events in your area.</p>
+		<h4>Upcoming Events</h4>
+		<p class='min-font' ng-show="profileCtrl.events.length === 0">There are no upcoming events.</p>
 		<ul>
 			<li ng-repeat="event in profileCtrl.events" ng-show="event.city === profileCtrl.currentUser.city">
+				<a href="#/event/{{event.id}}"><span ng-bind='event.name'></span></a> <br>
+				<span class='min-font' ng-bind='event.date | date: "medium"'></span> 
+			</li>
+			<li ng-repeat="event in profileCtrl.events" ng-show="event.city !== profileCtrl.currentUser.city">
 				<a href="#/event/{{event.id}}"><span ng-bind='event.name'></span></a> <br>
 				<span class='min-font' ng-bind='event.date | date: "medium"'></span> 
 			</li>

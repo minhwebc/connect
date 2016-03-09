@@ -2,7 +2,7 @@ app.controller('tuRegisController', function(sessionFactory, loginFactory, $loca
  	var _this = this;
 	_this.regTutor = function(){
 		loginFactory.regiTutor(_this.newTutor, function(response){
-			console.log(response);
+			$location.path('/login')
 		});
 	}
 	_this.editPassword = function(data){

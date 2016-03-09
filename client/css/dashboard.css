@@ -1,3 +1,8 @@
+.profile-container {
+    border: 1px solid lightgray;
+    padding: 40px;
+}
+
 #nav a{
     color: lightblue;
     font-size: 20px;
@@ -8,6 +13,7 @@
     width: 45%;
     background-color:white;
     margin-right: 2em;
+    vertical-align: top;
 
 }
 
@@ -22,3 +28,11 @@
     margin-top: 1em;
     background-color:white;
 }
+
+li {
+    list-style: none;
+}
+
+    .min-font {
+        font-size: x-small;
+    }

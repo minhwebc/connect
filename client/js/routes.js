@@ -56,7 +56,7 @@ app.config(function ($routeProvider, $mdThemingProvider) {
         controller: 'eventController',
         controllerAs: 'eventCtrl' 
     })
-    .when('/profile/:id', {
+    .when('/profile/', {
         templateUrl: 'partials/profile.html',
         controller: 'profileController',
         controllerAs: 'profileCtrl',

@@ -1,4 +1,6 @@
-<div class="event-card" ng-repeat="event in eventAllCtrl.events">
+<input type="text" class="form-control" placeholder="Search for events' name..." ng-model="searchText">
+<br>
+<div class="event-card" ng-repeat="event in eventAllCtrl.events | filter: searchText">
 	<img style="width: 220px; margin: 0 auto; "src='./../images/laptop.jpg'>
 	<div class="info" style="text-align: center;">
 		<h3 ng-bind="event.name" style="text-align: left;"></h3>
